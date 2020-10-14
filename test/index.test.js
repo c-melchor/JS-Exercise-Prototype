@@ -63,7 +63,9 @@ describe('Instances of Person', () => {
   })
   it('can eat no more than 10 foods', () => {
     foods.forEach(item => neo.eat(item))
+    
     neo.eat(11)
+    
     expect(neo.stomach).to.not.include(11)
   })
   it('can poop to empty stomach', () => {
