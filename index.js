@@ -105,7 +105,6 @@ Car.prototype.fill = function(gallons){
 
 Car.prototype.drive = function(distance){
   this.odometer += distance;
-
 }
 
 
@@ -145,10 +144,10 @@ favoriteToy: 'Train'
   TASK 4
 
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. When 'this' is first introduced in code, it refers to JS as a whole language/ the window
+  2. implicit binding is when you create an object, you create keys, and the 'this' keyword refers to the keys in the object you created, it is bound to a method.
+  3. explicit binding is when you use .call or .apply to specifically bind 'this' to an Object
+  4. new binding is when an empty object is created, and 'this' is used to add properties and methods
 */
 
 
