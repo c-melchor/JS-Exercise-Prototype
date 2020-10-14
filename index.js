@@ -81,13 +81,6 @@ Person.prototype.toString = function (){
         + should initialize with an `odometer` at 0
     - Give cars the ability to get fueled with a `.fill(gallons)` method. Add the gallons to `tank`.
 
-
-
-    - STRETCH: Give cars ability to `.drive(distance)`. The distance driven:
-        + Should cause the `odometer` to go up.
-        + Should cause the the `tank` to go down taking `milesPerGallon` into account.
-    - STRETCH: A car which runs out of `fuel` while driving can't drive any more distance:
-        + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
 */
 
 function Car(model, milesPerGallon){
@@ -103,6 +96,21 @@ Car.prototype.fill = function(gallons){
 
 
 
+// - STRETCH: Give cars ability to `.drive(distance)`. The distance driven:
+// + Should cause the `odometer` to go up.
+// + Should cause the the `tank` to go down taking `milesPerGallon` into account.
+// - STRETCH: A car which runs out of `fuel` while driving can't drive any more distance:
+// + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
+
+
+Car.prototype.drive = function(distance){
+  this.odometer += distance;
+
+}
+
+
+
+
 
 /*
   TASK 3
@@ -114,22 +122,24 @@ Car.prototype.fill = function(gallons){
 
 Baby.prototype = Object.create(Person.prototype);
 
-function Baby(favoriteToy) {
-  Person.call(this, name, age, favoriteToy); //change to params, not strings
+function Baby(name, age, favoriteToy) {
+  Person.call(this, name, age); 
   this.favoriteToy = favoriteToy;
 }
 
+Baby.prototype.play = function(){
+  return `Playing with ${this.favoriteToy}`;
+}
+
 const baby = new Baby({
-name: 'Christina',
+name: 'Andrew',
 age: '2 months',
 favoriteToy: 'Train'
 })
 
 
 
-Baby.prototype.play = function(){
-  return `Playing with ${this.favoriteToy}`;
-}
+
 
 /* 
   TASK 4
